@@ -30,6 +30,9 @@ local themes = {
 do
 	function utility:Create(instance, properties, children)
 		local object = Instance.new(instance)
+		if (instance == 'ScreenGui') then
+			syn.protect_gui(object)
+		end
 		
 		for i, v in pairs(properties or {}) do
 			object[i] = v
